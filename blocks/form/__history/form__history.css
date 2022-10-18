@@ -1,0 +1,13 @@
+.form__history {
+  border: none;
+  padding: 0px;
+  resize: none;
+  overflow: auto;
+  border-bottom: 1px solid;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: black;
+}
