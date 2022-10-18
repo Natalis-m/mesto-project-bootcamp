@@ -1,0 +1,12 @@
+.form__name {
+  border: none;
+  padding: 0px;
+  border-bottom: 1px solid;
+  min-height: 27px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: black;
+}

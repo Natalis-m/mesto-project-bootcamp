@@ -1,0 +1,22 @@
+.profile__info {
+  color: #fff;
+  display: grid;
+  grid-template-columns: fit-content(294px) auto;
+  grid-template-rows: 42px auto;
+  gap: 16px 18px;
+  justify-self: start;
+}
+
+@media (max-width: 708px) {
+  .profile__info {
+    justify-self: center;
+    gap: 14px 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .profile__info {
+    grid-template-columns: fit-content(189px) auto;
+    grid-template-rows: 26px auto;
+  }
+}
