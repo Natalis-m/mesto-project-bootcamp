@@ -1,0 +1,10 @@
+.pop-up_active {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}

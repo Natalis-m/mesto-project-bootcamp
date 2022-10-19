@@ -1,6 +1,9 @@
 .button {
   background-color: transparent;
   transition: opasity 2s linear 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button:hover {

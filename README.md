@@ -13,6 +13,10 @@
 В проекте на практике закреплены знания по Flexbox, позиционированию элементов, работе с изображениями, созданию интерактива с помощью СSS.
 Код организован по БЭМ Nested.
 
+## Ccылка на GitHub Pages
+
+- [посмотреть проект](https://natalis-m.github.io/mesto-project-bootcamp/)
+
 ## Автор
 
 - [@natalis-m](https://github.com/Natalis-m)

@@ -4,12 +4,13 @@
   background-color: black;
   border-radius: 2px;
   color: #fff;
-  font-family: "Inter";
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   cursor: pointer;
+  padding: 0px;
 }
 
 .form__save:hover {
@@ -19,5 +20,7 @@
 @media (max-width: 708px) {
   .form__save {
     width: 238px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }

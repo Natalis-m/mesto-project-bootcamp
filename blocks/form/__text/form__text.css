@@ -1,10 +1,9 @@
-.form__history {
+.form__text {
   border: none;
   padding: 0px;
-  resize: none;
-  overflow: auto;
-  border-bottom: 1px solid;
-  font-family: "Inter";
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  min-height: 27px;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
