@@ -1,8 +1,8 @@
 .header {
   max-width: 880px;
   min-height: 74px;
-  margin: 0px auto;
-  padding: 45px 3% 40px; /*боковые внутренние отступы заданы для приятного отображения в разрешениях от 880 до 440 */
+  border-bottom: 1px solid rgb(84, 84, 84, 0.7);
+  margin: 45px auto 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,7 +10,7 @@
 
 @media (max-width: 500px) {
   .header {
-    padding: 28px 0px 42px;
+    margin-top: 28px;
     min-height: 56px;
   }
 }

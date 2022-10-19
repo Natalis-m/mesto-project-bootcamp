@@ -3,7 +3,7 @@
   width: 100%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .header__logo {
     max-width: 104px;
     padding-left: 27px;

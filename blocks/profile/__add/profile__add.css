@@ -3,6 +3,7 @@
   height: 50px;
   align-self: center;
   border: 2px solid;
+  border-radius: 2px;
   border-color: #fff;
   padding: 0px;
 }

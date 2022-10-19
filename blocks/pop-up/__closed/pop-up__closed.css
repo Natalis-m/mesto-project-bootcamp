@@ -4,8 +4,8 @@
   border: none;
   padding: 0px;
   position: absolute;
-  top: -30px;
-  right: -30px;
+  top: -40px;
+  right: -40px;
 }
 
 @media (max-width: 708px) {
