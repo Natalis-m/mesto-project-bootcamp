@@ -28,13 +28,14 @@
 @import url(../blocks/profile/__add/profile__add.css);
 /* galery */
 @import url(../blocks/galery/galery.css);
-@import url(../blocks/element/element.css);
-@import url(../blocks/element/__img/element__img.css);
-@import url(../blocks/element/__label/element__label.css);
-@import url(../blocks/element/__text/element__text.css);
-@import url(../blocks/element/__like/element__like.css);
-@import url(../blocks/element/__like/_active/element__like_active.css);
-@import url(../blocks/element/__button/element__button.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__wraping-img/card__wraping-img.css);
+@import url(../blocks/card/__img/card__img.css);
+@import url(../blocks/card/__label/card__label.css);
+@import url(../blocks/card/__text/card__text.css);
+@import url(../blocks/card/__like/card__like.css);
+@import url(../blocks/card/__like/_active/card__like_active.css);
+@import url(../blocks/card/__button/card__button.css);
 /* footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);

@@ -1,0 +1,5 @@
+.card__wraping-img {
+  height: calc(100% - 79px);
+  max-width: 282px;
+  overflow: hidden;
+}
