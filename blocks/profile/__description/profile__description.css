@@ -1,11 +1,14 @@
-.profile__occupation {
+.profile__description {
   font-size: 18px;
   line-height: 22px;
   margin: 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 500px) {
-  .profile__occupation {
+  .profile__description {
     grid-column: span 2;
     font-size: 14px;
     line-height: 17px;
