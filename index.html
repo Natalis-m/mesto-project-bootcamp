@@ -10,6 +10,74 @@
     <title>Mesto</title>
   </head>
   <body class="page">
+    <section class="pop-up" id="popupEditProfile">
+      <article class="pop-up__overlay">
+        <button class="pop-up__closed button">
+          <img src="./images/Close.png" alt="Закрыть" class="pop-up__button" />
+        </button>
+        <div class="pop-up__rectangle">
+          <p class="pop-up__title">Редактировать профиль</p>
+          <form id="profileEditForm" name="form">
+            <fieldset class="form">
+              <input
+                id="profileInputName"
+                class="form__text"
+                type="text"
+                placeholder="Ваше имя"
+                name="profile_name"
+              />
+              <input
+                id="profileInputDescription"
+                class="form__text "
+                type="text"
+                name="history"
+                placeholder="Расскажите о себе"
+              ></input>
+              <button class="form__save" type="submit">Сохранить</button>
+            </fieldset>
+          </form>
+        </div>
+      </article>
+    </section>
+    <section class="pop-up" id="popupAddPlace">
+      <article class="pop-up__overlay">
+        <button class="pop-up__closed button">
+          <img src="./images/Close.png" alt="Закрыть" class="pop-up__button" />
+        </button>
+        <div class="pop-up__rectangle">
+          <p class="pop-up__title">Новое место</p>
+          <form id="addPlaceForm" name="form">
+            <fieldset class="form">
+              <input
+                id="inputNameAddPlace"
+                class="form__text"
+                type="text"
+                placeholder="Название"
+                name="img_name"
+              />
+              <input
+                id="inputSrcAddPlace"
+                class="form__text "
+                type="text"
+                name="src_img"
+                placeholder="Ссылка на картинку"
+              ></input>
+              <button class="form__save" type="submit">Создать</button>
+            </fieldset>
+          </form>
+        </div>
+      </article>
+    </section>
+    <section class="imgPopup">
+      <article class="imgPopup__overlay">
+        <button class="imgPopup__closed button">
+          <img src="./images/Close.png" alt="Закрыть" class="imgPopup__button" />
+        </button>
+        <img src="" alt=""
+        class="imgPopup__img">
+        <p class="imgPopup__text"></p>
+      </article>
+    </section>
     <header class="header">
       <img src="./images/logo.svg" alt="логотип" class="header__logo" />
     </header>
@@ -25,7 +93,7 @@
           <button class="profile__edit button">
             <img src="./images/editor.png" alt="редактировать" class="profile__button" />
           </button>
-          <p class="profile__occupation">Исследователь океана</p>
+          <p class="profile__description">Исследователь океана</p>
         </div>
         <button class="profile__add button">
           <img src="./images/plus.png" alt="Добавить" class="profile__button" />
@@ -38,51 +106,24 @@
       <p class="footer__copyright">&copy; 2022. Наталия Шимкова</p>
     </footer>
     <template id="card">
-          <article class="card">
-            <div class="card__wraping-img">
-              <img
-              src=""
-              alt=""
-              class="card__img"
-            />
-            </div>
-            <div class="card__label">
-              <p class="card__text"></p>
-              <button class="card__like card__like_active button">
-                <img src="./images/like.svg" alt="Лайк" class="__button" />
-              </button>
-            </div>
-          </article>
-        </template>
-        <script src="./pages/index.js"></script>
-    <template id="pop-up">
-      <section class="pop-up">
-        <article class="pop-up__overlay">
-          <button class="pop-up__closed button">
-            <img src="./images/Close.png" alt="Закрыть" class="pop-up__button" />
+      <article class="card">
+        <button class="card__delet button">
+          <img src="./images/delet.png" alt="удалить" class="card__button" />
+        </button>
+        <div class="card__wraping-img">
+          <img
+          src=""
+          alt=""
+          class="card__img"
+        />
+        </div>
+        <div class="card__label">
+          <p class="card__text"></p>
+          <button class="card__like button">
+            <img src="./images/like.svg" alt="Лайк" class="card__button" />
           </button>
-          <div class="pop-up__rectangle">
-            <p class="pop-up__title"></p>
-            <form id='formId' name="form">
-              <fieldset class="form">
-                <input
-                  class="form__text form__text_name"
-                  type="text"
-                  placeholder=""
-                  name=""
-                />
-                <input
-                  class="form__text form__text_history"
-                  type="text"
-                  name=""
-                  placeholder=""
-                ></input>
-                <button class="form__save" type="submit"></button>
-              </fieldset>
-            </form>
-          </div>
-        </article>
-      </section>
+        </div>
+      </article>
     </template>
     <script src="./pages/index.js"></script>
   </body>
