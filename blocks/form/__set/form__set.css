@@ -1,14 +1,14 @@
-.form {
+.form__set {
   display: flex;
   flex-direction: column;
   padding: 50px 0px 0px;
   margin: 0px;
   border: none;
-  gap: 30px;
+  gap: 32px;
 }
 
 @media (max-width: 708px) {
-  .form {
+  .form__set {
     padding-top: 75px;
   }
 }

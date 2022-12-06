@@ -1,7 +1,10 @@
 .pop-up__title {
+  font-family: "Inter";
+  font-style: normal;
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
+  height: 23px;
   margin: 0px;
 }
 

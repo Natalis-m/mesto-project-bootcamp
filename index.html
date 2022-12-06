@@ -11,72 +11,84 @@
   </head>
   <body class="page">
     <section class="pop-up" id="popupEditProfile">
-      <article class="pop-up__overlay">
+      <div class="pop-up__overlay pop-up__rectangle">
         <button class="pop-up__closed button">
           <img src="./images/Close.png" alt="Закрыть" class="pop-up__button" />
         </button>
-        <div class="pop-up__rectangle">
-          <p class="pop-up__title">Редактировать профиль</p>
-          <form id="profileEditForm" name="form">
-            <fieldset class="form">
+        <p class="pop-up__title">Редактировать профиль</p>
+
+        <form id="profileEditForm" name="form" class="form" novalidate>
+          <fieldset class="form__set">
+            <div class="form__field">
               <input
-                id="profileInputName"
-                class="form__text"
+                id="input-name"
+                class="form__input "
                 type="text"
-                placeholder="Ваше имя"
+                placeholder="Имя"
                 name="profile_name"
+                required minlength="2" maxlength="40"
               />
+              <span class="form__error input-name-error"></span>
+            </div>
+            <div class="form__field">
               <input
-                id="profileInputDescription"
-                class="form__text "
+                id="input-description"
+                class="form__input "
                 type="text"
                 name="history"
-                placeholder="Расскажите о себе"
+                placeholder="О себе"
+                required minlength="2" maxlength="200"
               ></input>
-              <button class="form__save" type="submit">Сохранить</button>
-            </fieldset>
-          </form>
-        </div>
-      </article>
+              <span class="form__error input-description-error"></span>
+            </div>
+            <button class="form__submit" type="submit">Сохранить</button>
+          </fieldset>
+        </form>
+      </div>
     </section>
     <section class="pop-up" id="popupAddPlace">
-      <article class="pop-up__overlay">
+      <div class="pop-up__overlay pop-up__rectangle">
         <button class="pop-up__closed button">
           <img src="./images/Close.png" alt="Закрыть" class="pop-up__button" />
         </button>
-        <div class="pop-up__rectangle">
-          <p class="pop-up__title">Новое место</p>
-          <form id="addPlaceForm" name="form">
-            <fieldset class="form">
+        <p class="pop-up__title">Новое место</p>
+        <form id="addPlaceForm" name="form" class="form" novalidate>
+          <fieldset class="form__set">
+            <div class="form__field">
               <input
-                id="inputNameAddPlace"
-                class="form__text"
+                id="input-add-place"
+                class="form__input"
                 type="text"
                 placeholder="Название"
                 name="img_name"
+                required minlength="2" maxlength="30"
               />
-              <input
-                id="inputSrcAddPlace"
-                class="form__text "
-                type="text"
-                name="src_img"
-                placeholder="Ссылка на картинку"
-              ></input>
-              <button class="form__save" type="submit">Создать</button>
-            </fieldset>
-          </form>
-        </div>
-      </article>
+              <span class="form__error input-add-place-error"></span>
+            </div>
+            <div class="form__field">
+            <input
+              id="input-src-place"
+              class="form__input "
+              type="url"
+              name="src_img"
+              placeholder="Ссылка на картинку"
+            ></input>
+            <span class="form__error input-src-place-error"></span>
+            </div>
+            <button class="form__submit" type="submit">Создать</button>
+          </fieldset>
+        </form>
+      </div>
     </section>
-    <section class="imgPopup">
-      <article class="imgPopup__overlay">
-        <button class="imgPopup__closed button">
-          <img src="./images/Close.png" alt="Закрыть" class="imgPopup__button" />
+    <section class="pop-up imgPopup">
+      <div class="pop-up__overlay imgPopup__overlay">
+        <button class="pop-up__closed button">
+          <img src="./images/Close.png" alt="Закрыть" class="pop-up__button" />
         </button>
         <img src="" alt=""
         class="imgPopup__img">
         <p class="imgPopup__text"></p>
-      </article>
+      </div>
     </section>
     <header class="header">
       <img src="./images/logo.svg" alt="логотип" class="header__logo" />

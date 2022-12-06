@@ -1,32 +1,3 @@
-.imgPopup {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  left: 0;
-  right: 0;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  visibility: hidden;
-  opacity: 0;
-}
-
 .imgPopup::before {
-  content: " ";
-  display: block;
-  left: 0;
-  right: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
   opacity: 0.9;
-  position: fixed;
-  z-index: 10;
-}
-
-.did-fade-in {
-  visibility: visible;
-  animation: fadeOut 1s linear;
 }
