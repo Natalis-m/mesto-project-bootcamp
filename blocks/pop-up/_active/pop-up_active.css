@@ -1,5 +1,4 @@
 .pop-up_active {
-  animation: fadeIn 1s linear;
   opacity: 1;
   visibility: visible;
 }

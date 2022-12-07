@@ -1,4 +1,4 @@
-.form__save {
+.form__submit {
   width: 360px;
   height: 50px;
   background-color: black;
@@ -11,14 +11,15 @@
   line-height: 22px;
   cursor: pointer;
   padding: 0px;
+  margin-top: 18px;
 }
 
-.form__save:hover {
+.form__submit:hover {
   opacity: 0.8;
 }
 
 @media (max-width: 708px) {
-  .form__save {
+  .form__submit {
     width: 238px;
     font-size: 14px;
     line-height: 17px;

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Наталия Шимкова" />
+    <!--<meta name="description" content="">-->
+    <!--<link rel="shortcut icon" href="" type="">-->
+    <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
+    <title>Mesto</title>
+  </head>
+  <body class="page">
+    <section class="pop-up" id="popupEditProfile">
+      <div class="pop-up__overlay pop-up__rectangle">
+        <button class="pop-up__closed button">
+          <img src="<%=require('../images/Close.png')%>" alt="Закрыть" class="pop-up__button" />
+        </button>
+        <p class="pop-up__title">Редактировать профиль</p>
+
+        <form id="profileEditForm" name="form" class="form" novalidate>
+          <fieldset class="form__set">
+            <div class="form__field">
+              <input
+                id="input-name"
+                class="form__input "
+                type="text"
+                placeholder="Имя"
+                name="profile_name"
+                required minlength="2" maxlength="40"
+              />
+              <span class="form__error input-name-error"></span>
+            </div>
+            <div class="form__field">
+              <input
+                id="input-description"
+                class="form__input "
+                type="text"
+                name="history"
+                placeholder="О себе"
+                required minlength="2" maxlength="200"
+              ></input>
+              <span class="form__error input-description-error"></span>
+            </div>
+            <button class="form__submit" type="submit">Сохранить</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+    <section class="pop-up" id="popupAddPlace">
+      <div class="pop-up__overlay pop-up__rectangle">
+        <button class="pop-up__closed button">
+          <img src="<%=require('../images/Close.png')%>" alt="Закрыть" class="pop-up__button" />
+        </button>
+        <p class="pop-up__title">Новое место</p>
+        <form id="addPlaceForm" name="form" class="form" novalidate>
+          <fieldset class="form__set">
+            <div class="form__field">
+              <input
+                id="input-add-place"
+                class="form__input"
+                type="text"
+                placeholder="Название"
+                name="img_name"
+                required minlength="2" maxlength="30"
+              />
+              <span class="form__error input-add-place-error"></span>
+            </div>
+            <div class="form__field">
+            <input
+              id="input-src-place"
+              class="form__input "
+              type="url"
+              name="src_img"
+              placeholder="Ссылка на картинку"
+            ></input>
+            <span class="form__error input-src-place-error"></span>
+            </div>
+            <button class="form__submit" type="submit">Создать</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+    <section class="pop-up imgPopup">
+      <div class="pop-up__overlay imgPopup__overlay">
+        <button class="pop-up__closed button">
+          <img src="<%=require('../images/Close.png')%>" alt="Закрыть" class="pop-up__button" />
+        </button>
+        <img src="" alt=""
+        class="imgPopup__img">
+        <p class="imgPopup__text"></p>
+      </div>
+    </section>
+    <header class="header">
+      <img src="<%=require('../images/logo.svg')%>" alt="логотип" class="header__logo" />
+    </header>
+    <main>
+      <section class="profile">
+        <img
+          src="<%=require('../images/Kustojpg-min.jpg')%>"
+          alt="Жак-Ив Кусто"
+          class="profile__avatar"
+        />
+        <div class="profile__info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button class="profile__edit button">
+            <img src="<%=require('../images/editor.png')%>" alt="редактировать" class="profile__button" />
+          </button>
+          <p class="profile__description">Исследователь океана</p>
+        </div>
+        <button class="profile__add button">
+          <img src="<%=require('../images/plus.png')%>" alt="Добавить" class="profile__button" />
+        </button>
+      </section>
+      <section class="galery">
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022. Наталия Шимкова</p>
+    </footer>
+    <template id="card">
+      <article class="card">
+        <button class="card__delet button">
+          <img src="<%=require('../images/delet.png')%>" alt="удалить" class="card__button" />
+        </button>
+        <div class="card__wraping-img">
+          <img
+          src=""
+          alt=""
+          class="card__img"
+        />
+        </div>
+        <div class="card__label">
+          <p class="card__text"></p>
+          <button class="card__like button">
+            <img src="<%=require('../images/like.svg')%>" alt="Лайк" class="card__button" />
+          </button>
+        </div>
+      </article>
+    </template>
+    <!-- <script src="./pages/index.js"></script> -->
+  </body>
+</html>
