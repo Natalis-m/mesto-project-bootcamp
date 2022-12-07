@@ -6,14 +6,14 @@
     <meta name="author" content="Наталия Шимкова" />
     <!--<meta name="description" content="">-->
     <!--<link rel="shortcut icon" href="" type="">-->
-    <link rel="stylesheet" href="./pages/index.css" />
+    <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
     <title>Mesto</title>
   </head>
   <body class="page">
     <section class="pop-up" id="popupEditProfile">
       <div class="pop-up__overlay pop-up__rectangle">
         <button class="pop-up__closed button">
-          <img src="./images/Close.png" alt="Закрыть" class="pop-up__button" />
+          <img src="<%=require('../images/Close.png')%>" alt="Закрыть" class="pop-up__button" />
         </button>
         <p class="pop-up__title">Редактировать профиль</p>
 
@@ -49,7 +49,7 @@
     <section class="pop-up" id="popupAddPlace">
       <div class="pop-up__overlay pop-up__rectangle">
         <button class="pop-up__closed button">
-          <img src="./images/Close.png" alt="Закрыть" class="pop-up__button" />
+          <img src="<%=require('../images/Close.png')%>" alt="Закрыть" class="pop-up__button" />
         </button>
         <p class="pop-up__title">Новое место</p>
         <form id="addPlaceForm" name="form" class="form" novalidate>
@@ -83,7 +83,7 @@
     <section class="pop-up imgPopup">
       <div class="pop-up__overlay imgPopup__overlay">
         <button class="pop-up__closed button">
-          <img src="./images/Close.png" alt="Закрыть" class="pop-up__button" />
+          <img src="<%=require('../images/Close.png')%>" alt="Закрыть" class="pop-up__button" />
         </button>
         <img src="" alt=""
         class="imgPopup__img">
@@ -91,24 +91,24 @@
       </div>
     </section>
     <header class="header">
-      <img src="./images/logo.svg" alt="логотип" class="header__logo" />
+      <img src="<%=require('../images/logo.svg')%>" alt="логотип" class="header__logo" />
     </header>
     <main>
       <section class="profile">
         <img
-          src="./images/Kustojpg-min.jpg"
+          src="<%=require('../images/Kustojpg-min.jpg')%>"
           alt="Жак-Ив Кусто"
           class="profile__avatar"
         />
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="profile__edit button">
-            <img src="./images/editor.png" alt="редактировать" class="profile__button" />
+            <img src="<%=require('../images/editor.png')%>" alt="редактировать" class="profile__button" />
           </button>
           <p class="profile__description">Исследователь океана</p>
         </div>
         <button class="profile__add button">
-          <img src="./images/plus.png" alt="Добавить" class="profile__button" />
+          <img src="<%=require('../images/plus.png')%>" alt="Добавить" class="profile__button" />
         </button>
       </section>
       <section class="galery">
@@ -120,7 +120,7 @@
     <template id="card">
       <article class="card">
         <button class="card__delet button">
-          <img src="./images/delet.png" alt="удалить" class="card__button" />
+          <img src="<%=require('../images/delet.png')%>" alt="удалить" class="card__button" />
         </button>
         <div class="card__wraping-img">
           <img
@@ -132,11 +132,11 @@
         <div class="card__label">
           <p class="card__text"></p>
           <button class="card__like button">
-            <img src="./images/like.svg" alt="Лайк" class="card__button" />
+            <img src="<%=require('../images/like.svg')%>" alt="Лайк" class="card__button" />
           </button>
         </div>
       </article>
     </template>
-    <script src="./pages/index.js"></script>
+    <!-- <script src="./pages/index.js"></script> -->
   </body>
 </html>
