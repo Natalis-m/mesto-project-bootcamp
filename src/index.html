@@ -52,17 +52,18 @@
           <img src="<%=require('../images/Close.png')%>" alt="Закрыть" class="pop-up__button" />
         </button>
         <p class="pop-up__title">Обновить аватар</p>
-        <form id="editImgProfileForm" name="form" class="form " novalidate>
-          <div class="form__field form__img-profile">
-            <input
-              id="input-src-img-profile"
-              class="form__input"
-              type="url"
-              name="src_img-profile"
-              placeholder="Ссылка на фото"
-              required
-            ></input>
-            <span class="form__error input-src-img-profile-error"></span>
+        <form id="editImgProfileForm" name="form" class="form" novalidate>
+          <fieldset class="form__set">
+            <div class="form__field form__img-profile">
+              <input
+                id="input-src-img-profile"
+                class="form__input"
+                type="url"
+                name="src_img-profile"
+                placeholder="Ссылка на фото"
+                required
+              ></input>
+              <span class="form__error input-src-img-profile-error"></span>
             </div>
             <button class="form__submit" type="submit">Сохранить</button>
           </fieldset>
