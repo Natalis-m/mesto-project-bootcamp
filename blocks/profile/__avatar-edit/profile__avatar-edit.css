@@ -1,0 +1,11 @@
+.profile__avatar-edit {
+  position: absolute;
+  top: 47px;
+  left: 47px;
+  object-fit: cover;
+  width: 26px;
+  height: 26px;
+  opacity: 0;
+  z-index: 3;
+  transition: all 0.6s linear;
+}
