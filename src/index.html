@@ -46,6 +46,30 @@
         </form>
       </div>
     </section>
+    <section class="pop-up" id="popupEditImgProfile">
+      <div class="pop-up__overlay pop-up__rectangle">
+        <button class="pop-up__closed button">
+          <img src="<%=require('../images/Close.png')%>" alt="Закрыть" class="pop-up__button" />
+        </button>
+        <p class="pop-up__title">Обновить аватар</p>
+        <form id="editImgProfileForm" name="form" class="form" novalidate>
+          <fieldset class="form__set">
+            <div class="form__field form__img-profile">
+              <input
+                id="input-src-img-profile"
+                class="form__input"
+                type="url"
+                name="src_img-profile"
+                placeholder="Ссылка на фото"
+                required
+              ></input>
+              <span class="form__error input-src-img-profile-error"></span>
+            </div>
+            <button class="form__submit" type="submit">Сохранить</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
     <section class="pop-up" id="popupAddPlace">
       <div class="pop-up__overlay pop-up__rectangle">
         <button class="pop-up__closed button">
@@ -72,6 +96,7 @@
               type="url"
               name="src_img"
               placeholder="Ссылка на картинку"
+              required
             ></input>
             <span class="form__error input-src-place-error"></span>
             </div>
@@ -95,17 +120,20 @@
     </header>
     <main>
       <section class="profile">
-        <img
-          src="<%=require('../images/Kustojpg-min.jpg')%>"
-          alt="Жак-Ив Кусто"
-          class="profile__avatar"
-        />
+        <div class="profile__avatar-wrapper">
+          <img src="<%=require('../images/editor.png')%>" alt="ред." class="profile__avatar-edit">
+          <img
+            src="<%=require('../images/Kustojpg-min.jpg')%>"
+            alt="Жак-Ив Кусто"
+            class="profile__avatar"
+          />
+        </div>
         <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h1 class="profile__name">Имя</h1>
           <button class="profile__edit button">
             <img src="<%=require('../images/editor.png')%>" alt="редактировать" class="profile__button" />
           </button>
-          <p class="profile__description">Исследователь океана</p>
+          <p class="profile__description">Описание</p>
         </div>
         <button class="profile__add button">
           <img src="<%=require('../images/plus.png')%>" alt="Добавить" class="profile__button" />
@@ -119,7 +147,7 @@
     </footer>
     <template id="card">
       <article class="card">
-        <button class="card__delet button">
+        <button class="card__delete button">
           <img src="<%=require('../images/delet.png')%>" alt="удалить" class="card__button" />
         </button>
         <div class="card__wraping-img">
@@ -131,12 +159,14 @@
         </div>
         <div class="card__label">
           <p class="card__text"></p>
-          <button class="card__like button">
-            <img src="<%=require('../images/like.svg')%>" alt="Лайк" class="card__button" />
-          </button>
+          <div class="card__like-block">
+            <button class="card__like button">
+              <img src="<%=require('../images/like.svg')%>" alt="Лайк" class="card__button" />
+            </button>
+            <span class="card__like-count"></span>
+          </div>
         </div>
       </article>
     </template>
-    <!-- <script src="./pages/index.js"></script> -->
   </body>
 </html>

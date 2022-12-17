@@ -57,9 +57,6 @@ export const enableValidation = () => {
   });
 };
 
-// Вызовем функцию
-// enableValidation();
-
 // Функция меняет состояние кнопки отправки
 function toggleButtonState(inputList, buttonElement) {
   if (hasInvalidInput(inputList)) {
