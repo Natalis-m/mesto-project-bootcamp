@@ -17,6 +17,7 @@ import {
   openPopupAddPlace,
   submitHandlerAdd,
   imgPopup,
+  editImgProfileFormElement,
 } from "./components/modal.js";
 
 const btnOpenEditProfile = document.querySelector(".profile__edit");
@@ -25,7 +26,6 @@ const profileEditFormElement = document.getElementById("profileEditForm");
 const createCardFormElement = document.getElementById("addPlaceForm");
 const closeButtons = document.querySelectorAll(".pop-up__closed");
 const btnEditImgProfile = document.querySelector(".profile__avatar-wrapper");
-const editImgProfileFormElement = document.getElementById("editImgProfileForm");
 
 btnEditImgProfile.addEventListener("click", openPopupEditImgProfile);
 editImgProfileFormElement.addEventListener("submit", submitPopupEditImgProfile);

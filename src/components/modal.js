@@ -1,7 +1,9 @@
 //общее для попапов
-import { createCardElement } from "./card.js";
+import { createCard, masterUserId } from "./card.js";
 import { updateProfile, createCardApi, updateImgProfile } from "./api.js";
 
+export const editImgProfileFormElement =
+  document.getElementById("editImgProfileForm");
 export const profeleNameElement = document.querySelector(".profile__name");
 export const profileDescriptionElement = document.querySelector(
   ".profile__description"
@@ -19,8 +21,17 @@ const inputLinkImgProfile = document.getElementById("input-src-img-profile");
 export function openPopupEditImgProfile() {
   openPopup(popupEditImgProfile);
 }
+
+function dataProcessingPopup() {
+  const popupActive = document.querySelector(".pop-up_active");
+  const formSubmit = popupActive.querySelector(".form__submit");
+  formSubmit.textContent = "Сохранение...";
+  // formSubmit.textContent = "Сохранить";
+}
+
 export function submitPopupEditImgProfile(evt) {
   evt.preventDefault();
+  dataProcessingPopup();
   updateImgProfile(inputLinkImgProfile)
     .then((res) => {
       if (res.ok) {
@@ -51,6 +62,7 @@ export function openPopupEditProfile() {
 
 export function submitHandlerEditor(evt) {
   evt.preventDefault();
+  dataProcessingPopup();
   updateProfile(inputName, inputDescription)
     .then((res) => {
       if (res.ok) {
@@ -79,6 +91,8 @@ export function openPopupAddPlace() {
 
 export function submitHandlerAdd(evt) {
   evt.preventDefault();
+  dataProcessingPopup();
+
   createCardApi(inputAddPlace, inputSrcPlace)
     .then((res) => {
       if (res.ok) {
@@ -88,7 +102,13 @@ export function submitHandlerAdd(evt) {
       }
     })
     .then((result) => {
-      createCardElement(result.name, result.link);
+      createCard(
+        result.name,
+        result.link,
+        masterUserId,
+        result._id,
+        result.likes
+      );
       closedAddPlace();
       evt.target.reset();
     })
@@ -120,6 +140,7 @@ function openPopup(popup) {
 }
 export function closePopup(popup) {
   popup.classList.remove("pop-up_active");
+  popup.querySelector(".form__submit").textContent = "Сохранить";
 }
 export function addOverlayClickHandler(popup) {
   popup.addEventListener("click", (evt) => {

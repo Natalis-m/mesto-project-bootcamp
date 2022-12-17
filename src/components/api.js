@@ -53,3 +53,30 @@ export function createCardApi(name, src) {
     }),
   });
 }
+
+export function deleteCardApi(elementId) {
+  return fetch(`${config.baseUrl}/cards/${elementId}`, {
+    method: "DELETE",
+    headers: {
+      authorization: config.headers.authorization,
+    },
+  });
+}
+
+export function putLikeApi(elementId) {
+  return fetch(`${config.baseUrl}/cards/likes/${elementId}`, {
+    method: "PUT",
+    headers: {
+      authorization: config.headers.authorization,
+    },
+  });
+}
+
+export function deleteLikeApi(elementId) {
+  return fetch(`${config.baseUrl}/cards/likes/${elementId}`, {
+    method: "DELETE",
+    headers: {
+      authorization: config.headers.authorization,
+    },
+  });
+}

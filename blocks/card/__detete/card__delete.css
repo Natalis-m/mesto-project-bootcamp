@@ -6,4 +6,9 @@
   z-index: 3;
   height: 19px;
   width: 18px;
+  display: none;
+}
+
+.card__delete_active {
+  display: block;
 }
