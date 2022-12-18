@@ -1,10 +1,6 @@
-import { enableValidation } from "./validate.js";
-
 export function openPopup(popup) {
   popup.classList.add("pop-up_active");
   document.addEventListener("keydown", closeByEsc);
-
-  enableValidation();
 }
 export function closePopup(popup) {
   popup.classList.remove("pop-up_active");
@@ -13,7 +9,7 @@ export function closePopup(popup) {
 export function addOverlayClickHandler(popup) {
   popup.addEventListener("click", (evt) => {
     if (!evt.target.closest(".pop-up__overlay")) {
-      closePopup(evt.target.closest(".pop-up"));
+      closePopup(evt.target);
     }
   });
 }

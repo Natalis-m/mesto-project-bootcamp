@@ -6,6 +6,14 @@ const config = {
   },
 };
 
+export function getResponseData(res) {
+  if (res.ok) {
+    return res.json();
+  } else {
+    return Promise.reject(`Ошибка: ${res.status}`);
+  }
+}
+
 export function getUser() {
   return fetch(`${config.baseUrl}/users/me`, {
     headers: {

@@ -1,6 +1,6 @@
 import "../src/index.css";
 import { setDefaultCards, renderCard } from "./components/card.js";
-import { enableValidation } from "./components/validate.js";
+import { enableValidation, selector } from "./components/validate.js";
 import {
   openPopup,
   closePopup,
@@ -12,6 +12,7 @@ import {
   updateProfile,
   createCardApi,
   updateImgProfile,
+  getResponseData,
 } from "./components/api.js";
 
 const btnOpenEditProfile = document.querySelector(".profile__edit");
@@ -44,13 +45,11 @@ btnOpenAddPlace.addEventListener("click", openPopupAddPlace);
 createCardFormElement.addEventListener("submit", submitHandlerAdd);
 closeButtons.forEach((closeButtons) => {
   const popup = closeButtons.closest(".pop-up");
+  popup.addEventListener("click", addOverlayClickHandler(popup));
   closeButtons.addEventListener("click", () => closePopup(popup));
 });
 
-addOverlayClickHandler(popupEditProfile);
-addOverlayClickHandler(popupAddPlace);
-addOverlayClickHandler(imgPopup);
-enableValidation();
+enableValidation(selector);
 
 Promise.all([getUser(), getGalery()])
   .then(([info, initialCards]) => {
@@ -76,18 +75,19 @@ function dataProcessingPopup() {
 function submitPopupEditImgProfile(evt) {
   evt.preventDefault();
   dataProcessingPopup();
-  updateImgProfile(inputLinkImgProfile)
+  updateImgProfile(inputLinkImgProfile, getResponseData)
     .then((result) => {
       profileAvatarElement.src = result.avatar;
       closedEditImgProfile();
       inputLinkImgProfile.value = "";
+      evt.submitter.setAttribute("disabled", true);
+      evt.submitter.classList.add(selector.inactiveButtonClass);
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
     })
     .finally(() => {
-      popupEditImgProfile.querySelector(".form__submit").textContent =
-        "Сохранить";
+      evt.submitter.textContent = "Сохранить";
     });
 }
 
@@ -104,11 +104,13 @@ function openPopupEditProfile() {
 function submitHandlerEditor(evt) {
   evt.preventDefault();
   dataProcessingPopup();
-  updateProfile(inputName, inputDescription)
+  updateProfile(inputName, inputDescription, getResponseData)
     .then((result) => {
       profeleNameElement.textContent = result.name;
       profileDescriptionElement.textContent = result.about;
       closedEditProfile();
+      evt.submitter.setAttribute("disabled", true);
+      evt.submitter.classList.add(selector.inactiveButtonClass);
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
@@ -130,7 +132,7 @@ function submitHandlerAdd(evt) {
   evt.preventDefault();
   dataProcessingPopup();
 
-  createCardApi(inputAddPlace, inputSrcPlace)
+  createCardApi(inputAddPlace, inputSrcPlace, getResponseData)
     .then((result) => {
       renderCard(
         result.name,
@@ -144,6 +146,8 @@ function submitHandlerAdd(evt) {
     .then(() => {
       closedAddPlace();
       evt.target.reset();
+      evt.submitter.setAttribute("disabled", true);
+      evt.submitter.classList.add(selector.inactiveButtonClass);
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
