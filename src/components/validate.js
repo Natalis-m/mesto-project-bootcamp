@@ -47,13 +47,7 @@ export const enableValidation = () => {
 
   // Переберём полученную коллекцию
   formList.forEach((formElement) => {
-    formElement.addEventListener("submit", function (evt) {
-      evt.preventDefault();
-    });
-    const fieldsetList = Array.from(formElement.querySelectorAll(".form__set"));
-    fieldsetList.forEach((fieldSet) => {
-      setEventListeners(fieldSet);
-    });
+    setEventListeners(formElement);
   });
 };
 

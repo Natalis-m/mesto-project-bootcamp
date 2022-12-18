@@ -1,4 +1,4 @@
-.form__set {
+.form {
   display: flex;
   flex-direction: column;
   padding: 50px 0px 0px;
@@ -8,7 +8,7 @@
 }
 
 @media (max-width: 708px) {
-  .form__set {
+  .form {
     padding-top: 75px;
   }
 }
