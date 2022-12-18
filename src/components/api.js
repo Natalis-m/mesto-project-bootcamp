@@ -11,6 +11,12 @@ export function getUser() {
     headers: {
       authorization: config.headers.authorization,
     },
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
   });
 }
 
@@ -22,6 +28,12 @@ export function updateProfile(name, description) {
       name: name.value,
       about: description.value,
     }),
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
   });
 }
 
@@ -32,6 +44,12 @@ export function updateImgProfile(link) {
     body: JSON.stringify({
       avatar: link.value,
     }),
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
   });
 }
 
@@ -40,6 +58,12 @@ export function getGalery() {
     headers: {
       authorization: config.headers.authorization,
     },
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
   });
 }
 
@@ -51,6 +75,12 @@ export function createCardApi(name, src) {
       name: name.value,
       link: src.value,
     }),
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
   });
 }
 
@@ -60,6 +90,12 @@ export function deleteCardApi(elementId) {
     headers: {
       authorization: config.headers.authorization,
     },
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
   });
 }
 
@@ -69,6 +105,12 @@ export function putLikeApi(elementId) {
     headers: {
       authorization: config.headers.authorization,
     },
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
   });
 }
 
@@ -78,5 +120,11 @@ export function deleteLikeApi(elementId) {
     headers: {
       authorization: config.headers.authorization,
     },
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
   });
 }
