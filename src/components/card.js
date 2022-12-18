@@ -1,5 +1,10 @@
 import { openPicture } from "../index.js";
-import { deleteCardApi, putLikeApi, deleteLikeApi } from "./api.js";
+import {
+  deleteCardApi,
+  putLikeApi,
+  deleteLikeApi,
+  getResponseData,
+} from "./api.js";
 
 const galery = document.querySelector(".galery");
 const cardTemplate = document.getElementById("card").content;
@@ -80,7 +85,7 @@ function isMyLikeFunc(likeList, userId) {
 }
 
 function cardDelete(cardElement, cardId) {
-  deleteCardApi(cardId)
+  deleteCardApi(cardId, getResponseData)
     .then(() => {
       cardElement.remove();
     })
@@ -102,7 +107,7 @@ function likeBtnHandler(cardElement, cardId, likeList, userId) {
 }
 
 function like(cardId, likeElement, numberLike) {
-  putLikeApi(cardId)
+  putLikeApi(cardId, getResponseData)
     .then((result) => {
       likeElement.classList.add("card__like_type_active");
       numberLike.textContent = result.likes.length;
@@ -111,7 +116,7 @@ function like(cardId, likeElement, numberLike) {
 }
 
 function dislike(cardId, likeElement, numberLike) {
-  deleteLikeApi(cardId)
+  deleteLikeApi(cardId, getResponseData)
     .then((result) => {
       likeElement.classList.remove("card__like_type_active");
       numberLike.textContent = result.likes.length;
