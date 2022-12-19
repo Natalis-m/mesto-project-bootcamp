@@ -1,6 +1,6 @@
 import "../src/index.css";
 import { setDefaultCards, renderCard } from "./components/card.js";
-import { enableValidation, selector } from "./components/validate.js";
+import { enableValidation } from "./components/validate.js";
 import {
   openPopup,
   closePopup,
@@ -36,6 +36,14 @@ const profileAvatarElement = document.querySelector(".profile__avatar");
 const popupEditProfile = document.querySelector("#popupEditProfile");
 const popupAddPlace = document.querySelector("#popupAddPlace");
 const imgPopup = document.querySelector(".imgPopup");
+
+const selector = {
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__submit",
+  inactiveButtonClass: "form__submit_inactive",
+  inputErrorClass: "form__input_type_error",
+};
 
 btnEditImgProfile.addEventListener("click", openPopupEditImgProfile);
 editImgProfileFormElement.addEventListener("submit", submitPopupEditImgProfile);

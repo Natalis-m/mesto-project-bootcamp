@@ -19,13 +19,7 @@ export function getUser() {
     headers: {
       authorization: config.headers.authorization,
     },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return Promise.reject(`Ошибка: ${res.status}`);
-    }
-  });
+  }).then(getResponseData);
 }
 
 export function updateProfile(name, description) {
@@ -36,13 +30,7 @@ export function updateProfile(name, description) {
       name: name.value,
       about: description.value,
     }),
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return Promise.reject(`Ошибка: ${res.status}`);
-    }
-  });
+  }).then(getResponseData);
 }
 
 export function updateImgProfile(link) {
