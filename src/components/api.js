@@ -6,7 +6,7 @@ const config = {
   },
 };
 
-export function getResponseData(res) {
+function getResponseData(res) {
   if (res.ok) {
     return res.json();
   } else {
@@ -40,13 +40,7 @@ export function updateImgProfile(link) {
     body: JSON.stringify({
       avatar: link.value,
     }),
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return Promise.reject(`Ошибка: ${res.status}`);
-    }
-  });
+  }).then(getResponseData);
 }
 
 export function getGalery() {
@@ -54,13 +48,7 @@ export function getGalery() {
     headers: {
       authorization: config.headers.authorization,
     },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return Promise.reject(`Ошибка: ${res.status}`);
-    }
-  });
+  }).then(getResponseData);
 }
 
 export function createCardApi(name, src) {
@@ -71,13 +59,7 @@ export function createCardApi(name, src) {
       name: name.value,
       link: src.value,
     }),
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return Promise.reject(`Ошибка: ${res.status}`);
-    }
-  });
+  }).then(getResponseData);
 }
 
 export function deleteCardApi(elementId) {
@@ -86,13 +68,7 @@ export function deleteCardApi(elementId) {
     headers: {
       authorization: config.headers.authorization,
     },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return Promise.reject(`Ошибка: ${res.status}`);
-    }
-  });
+  }).then(getResponseData);
 }
 
 export function putLikeApi(elementId) {
@@ -101,13 +77,7 @@ export function putLikeApi(elementId) {
     headers: {
       authorization: config.headers.authorization,
     },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return Promise.reject(`Ошибка: ${res.status}`);
-    }
-  });
+  }).then(getResponseData);
 }
 
 export function deleteLikeApi(elementId) {
@@ -116,11 +86,5 @@ export function deleteLikeApi(elementId) {
     headers: {
       authorization: config.headers.authorization,
     },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return Promise.reject(`Ошибка: ${res.status}`);
-    }
-  });
+  }).then(getResponseData);
 }
