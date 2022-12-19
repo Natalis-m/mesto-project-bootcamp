@@ -1,5 +1,5 @@
 // Функция, изменяет внешний вид инпута при ошибке
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (formElement, inputElement, errorMessage, selector) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(selector.inputErrorClass);
   errorElement.textContent = errorMessage;
@@ -14,25 +14,30 @@ const hideInputError = (formElement, inputElement, selector) => {
 
 // Проверка на валидность всех полей в форме
 const setEventListeners = (formElement, selector) => {
-  const buttonElement = formElement.querySelector(
-    selector.submitButtonSelector
-  );
   const inputList = Array.from(
     formElement.querySelectorAll(selector.inputSelector)
   );
-  toggleButtonState(inputList, buttonElement, selector);
+  const buttonElement = formElement.querySelector(
+    selector.submitButtonSelector
+  );
+  toggleButtonState(buttonElement, inputList, selector);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
-      isValid(formElement, inputElement);
-      toggleButtonState(inputList, buttonElement, selector);
+      isValid(formElement, inputElement, selector);
+      toggleButtonState(buttonElement, inputList, selector);
     });
   });
 };
 
-// Проверка всех форм и инпутов внутри их, нет - покажем ошибку
-const isValid = (formElement, inputElement) => {
+//Проверка всех форм и инпутов внутри их, нет - покажем ошибку
+const isValid = (formElement, inputElement, selector) => {
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
+    showInputError(
+      formElement,
+      inputElement,
+      inputElement.validationMessage,
+      selector
+    );
   } else {
     hideInputError(formElement, inputElement, selector);
   }
@@ -48,15 +53,18 @@ function hasInvalidInput(inputList) {
 //Проверяем на валидность всех форм
 export const enableValidation = (selector) => {
   const formList = Array.from(document.querySelectorAll(selector.formSelector));
-
   // Переберём полученную коллекцию
   formList.forEach((formElement) => {
+    //
+    formElement.addEventListener("submit", function (evt) {
+      evt.preventDefault();
+    });
     setEventListeners(formElement, selector);
   });
 };
 
 // Функция меняет состояние кнопки отправки
-function toggleButtonState(inputList, buttonElement, selector) {
+function toggleButtonState(buttonElement, inputList, selector) {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add(selector.inactiveButtonClass);
     buttonElement.setAttribute("disabled", true);

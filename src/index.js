@@ -12,7 +12,6 @@ import {
   updateProfile,
   createCardApi,
   updateImgProfile,
-  getResponseData,
 } from "./components/api.js";
 
 const btnOpenEditProfile = document.querySelector(".profile__edit");
@@ -83,7 +82,7 @@ function dataProcessingPopup() {
 function submitPopupEditImgProfile(evt) {
   evt.preventDefault();
   dataProcessingPopup();
-  updateImgProfile(inputLinkImgProfile, getResponseData)
+  updateImgProfile(inputLinkImgProfile)
     .then((result) => {
       profileAvatarElement.src = result.avatar;
       closedEditImgProfile();
@@ -112,7 +111,7 @@ function openPopupEditProfile() {
 function submitHandlerEditor(evt) {
   evt.preventDefault();
   dataProcessingPopup();
-  updateProfile(inputName, inputDescription, getResponseData)
+  updateProfile(inputName, inputDescription)
     .then((result) => {
       profeleNameElement.textContent = result.name;
       profileDescriptionElement.textContent = result.about;
@@ -140,7 +139,7 @@ function submitHandlerAdd(evt) {
   evt.preventDefault();
   dataProcessingPopup();
 
-  createCardApi(inputAddPlace, inputSrcPlace, getResponseData)
+  createCardApi(inputAddPlace, inputSrcPlace)
     .then((result) => {
       renderCard(
         result.name,
